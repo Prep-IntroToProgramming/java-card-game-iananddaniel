@@ -1,3 +1,5 @@
+package VehicleTest;
+
 class VehicleTestDrive {  
 
     public static void main(String args[]) { 
