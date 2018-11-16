@@ -19,7 +19,9 @@ public class Deck
 
     public void Shuffle(){
         Collections.shuffle(deck);
-
     }
     
+    public int count(){
+        return deck.size();
+    }
 }
