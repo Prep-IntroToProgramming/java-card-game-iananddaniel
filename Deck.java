@@ -1,8 +1,8 @@
 import java.util.*;
 public class Deck
 {
-    public static void Deck(){
-        ArrayList<CardTemplate> deck = new ArrayList<CardTemplate>();
+    ArrayList<CardTemplate> deck = new ArrayList<CardTemplate>(); 
+    public void Deck(){
         for(int i = 1; i<5; i++){
             for(int j = 1; j<14; j++){
                 deck.add(new CardTemplate(j,i));
@@ -10,4 +10,16 @@ public class Deck
             }
         }
     }
+
+    public CardTemplate Draw(){
+        CardTemplate first = deck.get(0);
+        deck.remove(0);
+        return first;
+    }
+
+    public void Shuffle(){
+        Collections.shuffle(deck);
+
+    }
+    
 }
