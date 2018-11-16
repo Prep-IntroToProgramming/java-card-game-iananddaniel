@@ -1,27 +1,27 @@
 import java.util.*;
 public class Deck
 {
-    ArrayList<CardTemplate> deck = new ArrayList<CardTemplate>(); 
-    public void Deck(){
+    ArrayList<CardTemplate> cards = new ArrayList<CardTemplate>(); 
+    public Deck(){
         for(int i = 1; i<5; i++){
             for(int j = 1; j<14; j++){
-                deck.add(new CardTemplate(j,i));
-                System.out.println(CardTemplate.suitToString(i)+" "+ CardTemplate.rankToString(j));
+                cards.add(new CardTemplate(j,i));
+                //System.out.println(CardTemplate.suitToString(i)+" "+ CardTemplate.rankToString(j));
             }
         }
     }
 
-    public CardTemplate Draw(){
-        CardTemplate first = deck.get(0);
-        deck.remove(0);
+    public CardTemplate draw(){
+        CardTemplate first = cards.get(0);
+        cards.remove(0);
         return first;
     }
 
-    public void Shuffle(){
-        Collections.shuffle(deck);
+    public void shuffle(){
+        Collections.shuffle(cards);
     }
     
     public int count(){
-        return deck.size();
+        return cards.size();
     }
 }
