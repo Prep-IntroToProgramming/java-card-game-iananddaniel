@@ -7,9 +7,9 @@ public class TestDeck{
     /*   for (Deck s : test){
            System.out.println(rankToString(s.rank) + suitToString(s.suit));
     }*/
-    for (int i = 0; i < test.count(); i++){
+    /*for (int i = 0; i < test.count(); i++){
         System.out.println(rankToString((i).rank) + suitToString((i).suit));
-    }
+    }*/
     
 }
 }
