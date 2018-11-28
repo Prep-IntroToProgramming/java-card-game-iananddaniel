@@ -9,7 +9,26 @@ public class Player
         }
     }
 
-    void add(CardTemplate i){
+    void gainCard(CardTemplate i){
         Hand.add(i);
+    }
+
+    int add(){
+        int HandVal = 0;
+        boolean acePresent = false;
+        for(CardTemplate x: Hand){
+            if(x.rank <=10){
+                HandVal = HandVal+x.rank;
+            }else{
+                HandVal = HandVal+10;
+            }
+            if(x.rank == 1){
+                acePresent = true;
+            }
+            if(HandVal<=11 && acePresent == true){
+                HandVal = HandVal+10;
+            }
+        }
+        return HandVal;
     }
 }
