@@ -4,7 +4,9 @@ public class Player
     ArrayList<CardTemplate> Hand = new ArrayList<CardTemplate>();
     String name = "player1";
     void showHand(){
+        System.out.println("your hand is: ");
         for(CardTemplate c: Hand){
+            
             System.out.println(c.rank + " of " + c.suit);
         }
     }
