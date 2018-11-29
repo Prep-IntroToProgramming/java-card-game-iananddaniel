@@ -5,6 +5,7 @@ public class Game{
     Player player1 = new Player();
     Deck deck1 = new Deck();
     boolean bust = false;
+    boolean hold = false;
     public void main(){
         deck1.shuffle();
 
@@ -35,7 +36,7 @@ public class Game{
             System.out.println("You got BlackJack!");
             return;
         }
-        while(player1.add() < 21){
+        while(hold == false){
             System.out.println("Type 1 to hit or 2 to hold");
             Scanner input = new Scanner(System.in);
             int hitpass = input.nextInt();
@@ -74,6 +75,7 @@ public class Game{
                 }
             }
             if (hitpass == 2){
+                hold = true;
                 while(dealer.add()<17){
                     CardTemplate card3 = deck1.draw();
                     dealer.gainCard(card3);
@@ -84,18 +86,19 @@ public class Game{
                     }
                 }
             }
-            if(player1.add() > dealer.add() && bust == false){
-                System.out.println("YOU WIN! Your score was " + player1.add() + " and the dealer had " + dealer.add());
-                return;
-            }
-            if(dealer.add() > player1.add() && bust == false){
-                System.out.println("You lose :( Your score was " + player1.add() + " and the dealer had " + dealer.add());
-                return;
-            }
-            if(dealer.add() == player1.add() && bust == false){
-                System.out.println("You tied with the dealer. Your score was " + player1.add() + " and the dealer had " + dealer.add());
-                return;
-            }
         }
+        if(player1.add() > dealer.add() && bust == false){
+            System.out.println("YOU WIN! Your score was " + player1.add() + " and the dealer had " + dealer.add());
+            return;
+        }
+        if(dealer.add() > player1.add() && bust == false){
+            System.out.println("You lose :( Your score was " + player1.add() + " and the dealer had " + dealer.add());
+            return;
+        }
+        if(dealer.add() == player1.add() && bust == false){
+            System.out.println("You tied with the dealer. Your score was " + player1.add() + " and the dealer had " + dealer.add());
+            return;
+        }
+
     }
 }
