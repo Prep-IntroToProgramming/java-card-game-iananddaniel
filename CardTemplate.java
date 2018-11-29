@@ -1,4 +1,3 @@
- 
 
 public class CardTemplate {
     //Here you need to declare the instance variables for the Card object
@@ -34,16 +33,16 @@ public class CardTemplate {
      */
     public CardTemplate (int arank, int asuit){
         if((arank>=1)&&(arank<=13)){
-        rank = arank;
-    }else{
-        throw new RuntimeException();
-    }
+            rank = arank;
+        }else{
+            throw new RuntimeException();
+        }
         if((asuit>=1)&&(asuit<=4)){
-        suit = asuit;
-    }else{
-        throw new RuntimeException();
+            suit = asuit;
+        }else{
+            throw new RuntimeException();
+        }
     }
-}
     // Here is the if-then-else approach for returning the string
     // as a rank
     public static String rankToString(int rank) {
@@ -80,10 +79,8 @@ public class CardTemplate {
             return null;
         }    
     }
-    
 
  
-
 
     // Here you need to declare a public class method called suitToString that takes an 
     // int (the suit) as input and uses if-else statements or a switch statement to 
