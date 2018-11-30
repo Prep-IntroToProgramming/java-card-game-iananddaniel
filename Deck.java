@@ -20,8 +20,12 @@ public class Deck
     public void shuffle(){
         Collections.shuffle(cards);
     }
-    
+
     public int count(){
         return cards.size();
+    }
+
+    public void discard(ArrayList i){
+        i.remove(0);
     }
 }

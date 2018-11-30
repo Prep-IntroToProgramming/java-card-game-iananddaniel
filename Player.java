@@ -7,7 +7,7 @@ public class Player
         System.out.println("your hand is: ");
         for(CardTemplate c: Hand){
             
-            System.out.println(c.rank + " of " + c.suit);
+            System.out.println(c.rankToString() + " of " + c.suitToString());
         }
     }
 

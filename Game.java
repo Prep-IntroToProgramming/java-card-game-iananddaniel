@@ -8,27 +8,14 @@ public class Game{
     boolean hold = false;
     public void main(){
         deck1.shuffle();
-
-        /*System.out.println("Number of Players: ");
-        int nPlayers; 
-        while (!input.hasNextInt()){
-        System.out.println("invalid number of players");
-        System.out.println("Number of Players: ");
-        input.nextLine();
-        }
-        nPlayers = input.nextInt();
-        for (int y = 1; y<=nPlayers; y++){
-        Player player= new Player();
-        players.add(player);
-        }*/
         for(int z = 0; z<2; z++){
             CardTemplate card1 = deck1.draw();
             player1.gainCard(card1);
             card1 = deck1.draw();
             dealer.gainCard(card1);
         }
-        dealer.showHand();
-        System.out.println("^^dealer cards");
+        //dealer.showHand();
+        //System.out.println("^^dealer cards");
         player1.showHand();
         System.out.println("your hand value is");
         System.out.println(player1.add());
@@ -40,7 +27,6 @@ public class Game{
             System.out.println("Type 1 to hit or 2 to hold");
             Scanner input = new Scanner(System.in);
             int hitpass = input.nextInt();
-
             while(hitpass < 1 || hitpass > 2){
                 System.out.println("Please enter a valid response.");
                 System.out.println("Type 1 to hit or 2 to hold");
@@ -99,6 +85,5 @@ public class Game{
             System.out.println("You tied with the dealer. Your score was " + player1.add() + " and the dealer had " + dealer.add());
             return;
         }
-
     }
 }
