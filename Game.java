@@ -12,11 +12,12 @@ public class Game{
             CardTemplate card1 = deck1.draw();
             player1.gainCard(card1);
             card1 = deck1.draw();
-            dealer.gainCard(card1);
+            dealer.dealerGainCard(card1);
         }
-        //dealer.showHand();
+        //System.out.println("you can see that the dealer has " + ;
         //System.out.println("^^dealer cards");
         player1.showHand();
+        dealer.dealerShowHand();
         System.out.println("your hand value is");
         System.out.println(player1.add());
         if(player1.add()==21){
@@ -55,16 +56,17 @@ public class Game{
                 hold = true;
             }
         }
+        System.out.println("the dealer has:");
         while(dealer.add()<17){
-                CardTemplate carda = new CardTemplate(1,1);
-                carda = deck1.draw();
-                dealer.gainCard(carda);
-                if(dealer.add()>21){
-                    System.out.println("The Dealer Busts and You Win!");
-                    bust = true;
-                    return;
-                }
+            CardTemplate carda = deck1.draw();
+            dealer.gainCard(carda);
+            dealer.dealerShowHand();
+            if(dealer.add()>21){
+                System.out.println("The Dealer Busts and You Win!");
+                bust = true;
+                return;
             }
+        }
         if(player1.add() > dealer.add() && bust == false){
             System.out.println("YOU WIN! Your score was " + player1.add() + " and the dealer had " + dealer.add());
             return;

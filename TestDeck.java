@@ -5,8 +5,6 @@ public class TestDeck{
         test.shuffle();
         CardTemplate cardTest = test.draw();
         System.out.println("drew " + cardTest.rankToString() + " of " + cardTest.suitToString());
-        test.shuffle();
         System.out.println("there are " + test.count() + " cards in the deck");
-        
     }
 }

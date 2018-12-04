@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*;//imports java utilities
 public class Deck
 {
     ArrayList<CardTemplate> cards = new ArrayList<CardTemplate>(); 
