@@ -25,7 +25,7 @@ public class Deck
         return cards.size();
     }
 
-    public void discard(ArrayList i){
-        i.remove(0);
+    public void discard(CardTemplate i, ArrayList j){
+        j.remove(i);
     }
 }

@@ -26,7 +26,13 @@ public class Game{
         while(hold == false){
             System.out.println("Type 1 to hit or 2 to hold");
             Scanner input = new Scanner(System.in);
+            while(!input.hasNextInt()){
+                System.out.println("Please enter a valid response.");
+                System.out.println("Type 1 to hit or 2 to hold");
+                input.nextLine();
+            }
             int hitpass = input.nextInt();
+
             while(hitpass < 1 || hitpass > 2){
                 System.out.println("Please enter a valid response.");
                 System.out.println("Type 1 to hit or 2 to hold");
@@ -44,35 +50,21 @@ public class Game{
                     bust = true;
                     return;
                 }
-                if(dealer.add()<17){
-                    card1 = deck1.draw();
-                    dealer.gainCard(card1);
-                    if(dealer.add()>21){
-                        System.out.println("The Dealer Busts and You Win!");
-                        bust = true;
-                        return;
-                    }
-                }
-                if (hitpass == 1){
-                    if (dealer.add()<17){
-                        CardTemplate card2 = deck1.draw();
-                        dealer.gainCard(card2);
-                    }
-                }
             }
             if (hitpass == 2){
                 hold = true;
-                while(dealer.add()<17){
-                    CardTemplate card3 = deck1.draw();
-                    dealer.gainCard(card3);
-                    if(dealer.add()>21){
-                        System.out.println("The Dealer Busts and You Win!");
-                        bust = true;
-                        return;
-                    }
-                }
             }
         }
+        while(dealer.add()<17){
+                CardTemplate carda = new CardTemplate(1,1);
+                carda = deck1.draw();
+                dealer.gainCard(carda);
+                if(dealer.add()>21){
+                    System.out.println("The Dealer Busts and You Win!");
+                    bust = true;
+                    return;
+                }
+            }
         if(player1.add() > dealer.add() && bust == false){
             System.out.println("YOU WIN! Your score was " + player1.add() + " and the dealer had " + dealer.add());
             return;
