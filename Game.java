@@ -13,7 +13,7 @@ public class Game{
             CardTemplate card1 = deck1.draw();
             player1.gainCard(card1);
             card1 = deck1.draw();
-            dealer.dealerGainCard(card1);
+            dealer.gainCard(card1);
         }
         //System.out.println("you can see that the dealer has " + ;
         //System.out.println("^^dealer cards");
