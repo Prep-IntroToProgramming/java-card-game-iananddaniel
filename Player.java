@@ -2,12 +2,13 @@ import java.util.*;
 public class Player
 {
     ArrayList<CardTemplate> Hand = new ArrayList<CardTemplate>();
+    public String name;
     void dealerShowHand(){
         for(int i = 1; i<Hand.size(); i++){
             System.out.println("you see that the dealer has " + Hand.get(i).rankToString() + " of " + Hand.get(i).suitToString());
         }
     }
-    
+
     void showHand(){
         System.out.println("your hand is: ");
         for(CardTemplate c: Hand){
@@ -18,7 +19,7 @@ public class Player
     void gainCard(CardTemplate i){
         Hand.add(i);
     }
-    
+
     void dealerGainCard(CardTemplate i){
         Hand.add(i);
     }
@@ -41,4 +42,11 @@ public class Player
         }
         return HandVal;
     }
+
+    public void pickName(){
+        System.out.println("Please enter your name:");
+        Scanner input = new Scanner(System.in);
+        name = input.nextLine();
+    }
 }
+

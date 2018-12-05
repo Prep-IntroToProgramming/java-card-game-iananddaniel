@@ -7,6 +7,7 @@ public class Game{
     boolean bust = false;
     boolean hold = false;
     public void main(){
+        player1.pickName();
         deck1.shuffle();
         for(int z = 0; z<2; z++){
             CardTemplate card1 = deck1.draw();
@@ -18,25 +19,25 @@ public class Game{
         //System.out.println("^^dealer cards");
         player1.showHand();
         dealer.dealerShowHand();
-        System.out.print("your hand value is: ");
+        System.out.print(player1.name + ", your hand value is: ");
         System.out.println(player1.add());
         if(player1.add()==21){
-            System.out.println("You got BlackJack!");
+            System.out.println(player1.name + ", You got BlackJack!");
             return;
         }
         while(hold == false){
-            System.out.println("Type 1 to hit or 2 to hold");
+            System.out.println(player1.name + ", Type 1 to hit or 2 to hold");
             Scanner input = new Scanner(System.in);
             while(!input.hasNextInt()){
-                System.out.println("Please enter a valid response.");
-                System.out.println("Type 1 to hit or 2 to hold");
+                System.out.println(player1.name + ", Please enter a valid response.");
+                System.out.println(player1.name + ", Type 1 to hit or 2 to hold");
                 input.nextLine();
             }
             int hitpass = input.nextInt();
 
             while(hitpass < 1 || hitpass > 2){
-                System.out.println("Please enter a valid response.");
-                System.out.println("Type 1 to hit or 2 to hold");
+                System.out.println(player1.name + ", Please enter a valid response.");
+                System.out.println(player1.name + ", Type 1 to hit or 2 to hold");
                 input.nextLine();
                 hitpass = input.nextInt();
             }
@@ -45,9 +46,9 @@ public class Game{
                 CardTemplate card1 = deck1.draw();
                 player1.gainCard(card1);
                 player1.showHand();
-                System.out.println("The value of your hand is: "+ player1.add());
+                System.out.println(player1.name + ", the value of your hand is: "+ player1.add());
                 if(player1.add()>21){
-                    System.out.println("you bust :(");
+                    System.out.println(player1.name + ", you bust :(");
                     bust = true;
                     return;
                 }
@@ -61,21 +62,21 @@ public class Game{
             dealer.gainCard(carda);
             dealer.dealerShowHand();
             if(dealer.add()>21){
-                System.out.println("The Dealer Busts and You Win!");
+                System.out.println(player1.name + ", The Dealer Busts and You Win!");
                 bust = true;
                 return;
             }
         }
         if(player1.add() > dealer.add() && bust == false){
-            System.out.println("YOU WIN! Your score was " + player1.add() + " and the dealer had " + dealer.add());
+            System.out.println(player1.name + ", YOU WIN! Your score was " + player1.add() + " and the dealer had " + dealer.add());
             return;
         }
         if(dealer.add() > player1.add() && bust == false){
-            System.out.println("You lose :( Your score was " + player1.add() + " and the dealer had " + dealer.add());
+            System.out.println(player1.name + ", You lose :( Your score was " + player1.add() + " and the dealer had " + dealer.add());
             return;
         }
         if(dealer.add() == player1.add() && bust == false){
-            System.out.println("You tied with the dealer. Your score was " + player1.add() + " and the dealer had " + dealer.add());
+            System.out.println(player1.name + ", You tied with the dealer. Your score was " + player1.add() + " and the dealer had " + dealer.add());
             return;
         }
     }
