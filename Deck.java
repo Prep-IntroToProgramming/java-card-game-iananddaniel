@@ -1,7 +1,7 @@
 import java.util.*;//imports java utilities
 public class Deck
 {
-    ArrayList<CardTemplate> cards = new ArrayList<CardTemplate>(); 
+    public ArrayList<CardTemplate> cards = new ArrayList<CardTemplate>(); 
     public Deck(){
         for(int i = 1; i<5; i++){
             for(int j = 1; j<14; j++){
@@ -26,6 +26,7 @@ public class Deck
     }
 
     public void discard(CardTemplate i, ArrayList j){
-        j.remove(i);
+        int index = j.indexOf(i);
+        j.remove(index);
     }
 }

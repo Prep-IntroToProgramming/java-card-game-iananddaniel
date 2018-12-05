@@ -18,7 +18,7 @@ public class Game{
         //System.out.println("^^dealer cards");
         player1.showHand();
         dealer.dealerShowHand();
-        System.out.println("your hand value is");
+        System.out.print("your hand value is: ");
         System.out.println(player1.add());
         if(player1.add()==21){
             System.out.println("You got BlackJack!");
@@ -56,7 +56,6 @@ public class Game{
                 hold = true;
             }
         }
-        System.out.println("the dealer has:");
         while(dealer.add()<17){
             CardTemplate carda = deck1.draw();
             dealer.gainCard(carda);
