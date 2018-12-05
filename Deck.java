@@ -29,4 +29,14 @@ public class Deck
         int index = j.indexOf(i);
         j.remove(index);
     }
+
+    public boolean check(CardTemplate i, ArrayList j){
+        boolean contains = false;
+        for(int x = 0; x < j.size(); x++){
+            if(j.contains(i)){
+                contains = true;
+            }
+        }
+        return contains;
+    }
 }

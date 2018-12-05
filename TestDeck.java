@@ -15,6 +15,7 @@ public class TestDeck{
         CardTemplate cardTest = test.draw();
         System.out.println("drew " + cardTest.rankToString() + " of " + cardTest.suitToString());
         System.out.println("there are " + test.count() + " cards in the deck");
+        System.out.println(test.check(test.cards.get(20), test.cards));
         
     }
 }
