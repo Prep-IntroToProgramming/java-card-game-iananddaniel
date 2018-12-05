@@ -1,6 +1,5 @@
 import java.util.*;
 public class Game{
-    //ArrayList<Player> players = new ArrayList<Player>();
     Player dealer = new Player();
     Player player1 = new Player();
     Deck deck1 = new Deck();
@@ -15,8 +14,6 @@ public class Game{
             card1 = deck1.draw();
             dealer.gainCard(card1);
         }
-        //System.out.println("you can see that the dealer has " + ;
-        //System.out.println("^^dealer cards");
         player1.showHand();
         dealer.dealerShowHand();
         System.out.print(player1.name + ", your hand value is: ");
