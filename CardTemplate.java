@@ -6,7 +6,7 @@ public class CardTemplate {
      */
     public final int suit;
     public final int rank;
-    // Kinds of ranks
+    // Kinds of ranks: assigns each rank a number 
     public final static int ACE   = 1;
     public final static int DEUCE = 2;
     public final static int THREE = 3;
@@ -20,7 +20,7 @@ public class CardTemplate {
     public final static int JACK  = 11;
     public final static int QUEEN = 12;
     public final static int KING  = 13;
-    // Suits
+    // Suits: assings each suit a number
     public final static int DIAMONDS = 1;
     public final static int CLUBS    = 2;
     public final static int HEARTS   = 3;
@@ -31,16 +31,17 @@ public class CardTemplate {
      * declaring the constructor
      *
      */
+    //constructor for cards that takes a rank and a suit
     public CardTemplate (int arank, int asuit){
         if((arank>=1)&&(arank<=13)){
             rank = arank;
         }else{
-            throw new RuntimeException();
+            throw new RuntimeException();//throws a runtime error if an invalid parameter is given
         }
         if((asuit>=1)&&(asuit<=4)){
             suit = asuit;
         }else{
-            throw new RuntimeException();
+            throw new RuntimeException();//throws a runtime error if an invalid parameter is given
         }
     }
     // Here is the if-then-else approach for returning the string
@@ -91,6 +92,7 @@ public class CardTemplate {
      *
      *
      */
+    //creates a class method which takes an int parameter and returns a string for the name of the suit
     public static String suitToString(int suit){
         if(suit==DIAMONDS){
             return "Diamonds";
@@ -104,6 +106,7 @@ public class CardTemplate {
             return null;
         }
     }
+    //creates an overloaded rank to string method that requires no parameters
     public String rankToString() {
         if (rank == ACE) {
             return "Ace";
@@ -138,6 +141,7 @@ public class CardTemplate {
             return null;
         }    
     }
+    //creates an overloaded suit to string that requires no parameters
     public String suitToString(){
         if(suit==DIAMONDS){
             return "Diamonds";
